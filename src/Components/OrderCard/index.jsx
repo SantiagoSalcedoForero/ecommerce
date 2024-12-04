@@ -9,7 +9,7 @@ const OrderCard = props => {
     }
     
     return (
-        <div className='flex justify-between items-center mb-3 p-[10px] bg-[#E4E2DD] rounded-lg'>
+        <div className='flex justify-between items-center mb-3 p-[10px] border border-black rounded-lg'>
             <div className='flex items-center gap-2'>
                 <figure className='min-w-20 h-20 flex flex-col'>
                     <img className='w-full h-full rounded-lg object-contain' src={imageUrl} alt={title} />

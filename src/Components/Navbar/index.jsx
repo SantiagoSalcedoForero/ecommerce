@@ -11,13 +11,17 @@ const Navbar = () => {
         <nav className='flex justify-between items-center fixed z-10 top-0 w-full py-3 px-8 text-sm from-neutral-500 bg-[#DB4A2B] text-[#E4E2DD] font-medium'>
             <ul className='flex items-center gap-3'>
                 <li>
-                    <NavLink to='/' >
+                    <NavLink 
+                        to='/'
+                        onClick={() => context.setSearchByCategory()} 
+                    >
                         <img src='https://lxcfppmxdskkdcuqwrwx.supabase.co/storage/v1/object/public/imagenes/otros/Logo%20ecommerce.png?t=2024-11-30T13%3A31%3A26.302Z' className='w-[90px] h-auto'/>
                     </NavLink>
                 </li>
                 <li>
                     <NavLink 
                         to='/all'
+                        onClick={() => context.setSearchByCategory()} 
                         className={({ isActive }) => isActive ? activeStyle : undefined} 
                     >
                         All
@@ -25,15 +29,26 @@ const Navbar = () => {
                 </li>
                 <li>
                     <NavLink 
-                        to='/clothes'
+                        to='/men'
+                        onClick={() => context.setSearchByCategory("men's clothing")} 
                         className={({ isActive }) => isActive ? activeStyle : undefined}  
                     >
-                        Clothes
+                        Men
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink 
+                        to='/women' 
+                        onClick={() => context.setSearchByCategory("women's clothing")} 
+                        className={({ isActive }) => isActive ? activeStyle : undefined} 
+                    >
+                        Women
                     </NavLink>
                 </li>
                 <li>
                     <NavLink 
                         to='/electronics' 
+                        onClick={() => context.setSearchByCategory('electronics')} 
                         className={({ isActive }) => isActive ? activeStyle : undefined} 
                     >
                         Electronics
@@ -41,23 +56,17 @@ const Navbar = () => {
                 </li>
                 <li>
                     <NavLink 
-                        to='/furnitures' 
+                        to='/jewelery'
+                        onClick={() => context.setSearchByCategory('jewelery')} 
                         className={({ isActive }) => isActive ? activeStyle : undefined} 
                     >
-                        Furnitures
+                        Jewelery
                     </NavLink>
                 </li>
                 <li>
                     <NavLink 
-                        to='/toys' 
-                        className={({ isActive }) => isActive ? activeStyle : undefined} 
-                    >
-                        Toys
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink 
-                        to='/others' 
+                        to='/others'
+                        onClick={() => context.setSearchByCategory('others')} 
                         className={({ isActive }) => isActive ? activeStyle : undefined} 
                     >
                         Others
